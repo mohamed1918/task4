@@ -60,6 +60,15 @@
                 return n * Factorial(n - 1);
         }
 
+        static string changechar(string str, int pos , char newChar)
+        {
+            if (pos < 0 || pos >= str.Length)
+                return str ;
+            char[] chars = str.ToCharArray();
+            chars[pos] = newChar;
+            return new string(chars);
+        }
+
         static void Main()
         {
             #region Q1
@@ -115,11 +124,25 @@
             #endregion
 
             #region Q7
-            Console.WriteLine("Enter a number to calculate its factorial: ");
-            int number = int.Parse(Console.ReadLine());
-            long result = Factorial(number);
-            Console.WriteLine($"Factorial of {number} is {result}");
+            //Console.WriteLine("Enter a number to calculate its factorial: ");
+            //int number = int.Parse(Console.ReadLine());
+            //long result = Factorial(number);
+            //Console.WriteLine($"Factorial of {number} is {result}");
             #endregion
+
+            #region Q8
+
+            Console.WriteLine("Enter a string: ");
+            string str = Console.ReadLine();
+            Console.WriteLine("Enter the position of the character to change (0-based index): ");
+            int pos = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the new character: ");
+            char newchar = char.Parse(Console.ReadLine());
+
+            string modifiedString = changechar(str, pos, newchar);
+            Console.WriteLine($"Modified string: {modifiedString}");
+            #endregion
+
 
 
         }
