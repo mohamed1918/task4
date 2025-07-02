@@ -30,6 +30,15 @@
             return sum;
         }
 
+        static bool isprime(int a) 
+        {
+            if ( a <=1 )  return false; 
+            for (int i = 2; i <=Math.Sqrt(a); i++) 
+                if (a % i == 0 ) return false;
+            return true;
+
+        }
+
         static void Main()
         {
             #region Q1
@@ -57,9 +66,23 @@
             #endregion
 
             #region Q4
-            Console.WriteLine("Enter a number to sum its digits: ");
+            //Console.WriteLine("Enter a number to sum its digits: ");
+            //int number = int.Parse(Console.ReadLine());
+            //Console.WriteLine($"Sum of digits: {sumdigit(number)}");
+            #endregion
+
+            #region Q5
+            Console.WriteLine("Enter a number to check if it's prime: ");
             int number = int.Parse(Console.ReadLine());
-            Console.WriteLine($"Sum of digits: {sumdigit(number)}");
+            if (isprime(number))
+            {
+                Console.WriteLine($"{number} is a prime number.");
+            }
+            else
+            {
+                Console.WriteLine($"{number} is not a prime number.");
+            }
+
             #endregion
         }
     }
