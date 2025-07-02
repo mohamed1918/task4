@@ -39,6 +39,19 @@
 
         }
 
+        static void maxAndmin(int[] arr , ref int max , ref int min)
+        {
+            min = arr[0];
+            max = arr[0];
+
+            foreach (int i in arr) 
+            {
+                if (i > max) max = i;
+                if (i < min) min = i;
+            }
+
+        } 
+
         static void Main()
         {
             #region Q1
@@ -72,16 +85,24 @@
             #endregion
 
             #region Q5
-            Console.WriteLine("Enter a number to check if it's prime: ");
-            int number = int.Parse(Console.ReadLine());
-            if (isprime(number))
-            {
-                Console.WriteLine($"{number} is a prime number.");
-            }
-            else
-            {
-                Console.WriteLine($"{number} is not a prime number.");
-            }
+            //Console.WriteLine("Enter a number to check if it's prime: ");
+            //int number = int.Parse(Console.ReadLine());
+            //if (isprime(number))
+            //{
+            //    Console.WriteLine($"{number} is a prime number.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine($"{number} is not a prime number.");
+            //}
+
+            #endregion
+
+            #region Q6
+            int [] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            int max = 0, min = 0;
+            maxAndmin(arr, ref max, ref min);   
+            Console.WriteLine($"Max = {max} , Min = {min}");
 
             #endregion
         }
