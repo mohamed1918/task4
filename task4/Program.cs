@@ -18,7 +18,17 @@
             sub = a - b;
         }
 
-        
+        static int sumdigit(int num) 
+        { 
+            int sum = 0;
+            while (num != 0) 
+            {
+                sum += num % 10;
+                num /= 10;
+                
+            }
+            return sum;
+        }
 
         static void Main()
         {
@@ -35,18 +45,22 @@
             #endregion
 
             #region Q3
-            Console.WriteLine("Enter 4 numbers : ");
-            int a = int.Parse(Console.ReadLine());
-            int b = int.Parse(Console.ReadLine());
-            int c = int.Parse(Console.ReadLine());
-            int d = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter 4 numbers : ");
+            //int a = int.Parse(Console.ReadLine());
+            //int b = int.Parse(Console.ReadLine());
+            //int c = int.Parse(Console.ReadLine());
+            //int d = int.Parse(Console.ReadLine());
 
-            sumAndsub(a, b, c, d, out int sum, out int sub);
-            Console.WriteLine($"sum = {sum} ");
-            Console.WriteLine($"sub = {sub} ");
+            //sumAndsub(a, b, c, d, out int sum, out int sub);
+            //Console.WriteLine($"sum = {sum} ");
+            //Console.WriteLine($"sub = {sub} ");
             #endregion
 
-
+            #region Q4
+            Console.WriteLine("Enter a number to sum its digits: ");
+            int number = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Sum of digits: {sumdigit(number)}");
+            #endregion
         }
     }
 }
