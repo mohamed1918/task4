@@ -52,6 +52,14 @@
 
         } 
 
+        static long Factorial(int n)
+        {
+            if (n == 0 || n == 1)
+                return 1;
+            else
+                return n * Factorial(n - 1);
+        }
+
         static void Main()
         {
             #region Q1
@@ -99,12 +107,21 @@
             #endregion
 
             #region Q6
-            int [] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            int max = 0, min = 0;
-            maxAndmin(arr, ref max, ref min);   
-            Console.WriteLine($"Max = {max} , Min = {min}");
+            //int [] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            //int max = 0, min = 0;
+            //maxAndmin(arr, ref max, ref min);   
+            //Console.WriteLine($"Max = {max} , Min = {min}");
 
             #endregion
+
+            #region Q7
+            Console.WriteLine("Enter a number to calculate its factorial: ");
+            int number = int.Parse(Console.ReadLine());
+            long result = Factorial(number);
+            Console.WriteLine($"Factorial of {number} is {result}");
+            #endregion
+
+
         }
     }
 }
